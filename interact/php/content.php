@@ -8,6 +8,10 @@ if($_REQUEST['email']){
 	$email= $_REQUEST['email'];
 }
 
+if($_REQUEST['id']){
+	$id= $_REQUEST['id'];
+}
+
 ?>
 
 <!DOCTYPE>
@@ -46,47 +50,67 @@ if($_REQUEST['email']){
 					
 				</div>
 			</div>
-
+			
+			<div class="addList">+</div>
 			<div id="containerInfo">
-				<div class="addList">+</div>
+				
 				<div class="list">
 					<div class="title">
 						<div class="options">
 
 							<div class="btn-group">
-							  <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown">
-							    <img src="../img/menu.png" width="32" height="32"/> <span class="caret"></span>
-							  </button>
 							  <ul class="dropdown-menu" role="menu">
 							    ...
 							  </ul>
 							</div>
 							</div>
-						Default List
+						All Contacts
 						<div class="iconarrow"><span id="down" class="glyphicon glyphicon-chevron-down"></span></div>
 					</div>
 					<div class="infoList">
 					</div>
 					
 				</div>
+				
+				
+				<div class="list">
+					<div class="title">
+						<div class="options">
+							<a href="#" style="color:white;"><span class="glyphicon glyphicon-th"></span></a>
+						</div>
+						<div class="submenu">
+							<div class="edit" style="float:left;"><a href="#" style="color:black;"><span class="glyphicon glyphicon-pencil" style="font-size:1.8em;margin-top:6px;"></a></span></div>
+							<div class="erase" style="float:right;"><a href="#" style="color:red;"><span class="glyphicon glyphicon-minus" style="font-size:1.8em;color:red;margin-top:8px;"></a></span></div>
+						</div>
+						New List
+						<div class="iconarrow">
+							<span id="down" class="glyphicon glyphicon-chevron-down"></span>
+						</div>
+					</div>
+					<div class="infoList">
+						<div class=<"contact">
+							You have 0 contacts.
+						</div>
+					</div>
+				</div>
+				
 			</div>
 
 			<div id="finder">
 				<h3>Find contacts by tags</h3>
 				<div class="find">
 					    <div class="input-group">
-					      <input type="text" class="form-control">
+					      <input id="tagValue" type="text" class="form-control">
 					      <span class="input-group-btn">
-					        <button class="btn btn-default" type="button" onclick="findTags('<?php echo $user?>');"><span id="down" class="glyphicon glyphicon-search"></span>&nbsp;</button>
+					      	<script type="text/javascript">function values(){var value= document.getElementById("tagValue").value; contacts2('<?php echo $user?>',value);}</script>
+					        <button class="btn btn-default" type="button" onclick="values()"><span id="down" class="glyphicon glyphicon-search"></span>&nbsp;</button>
 					      </span>
 					    </div>
 					
-					<div class="list-group">
-					  <a href="#" class="list-group-item">
-					    <h4 class="list-group-item-heading">Contact 1</h4>
-					    <p class="list-group-item-text">tags:</p>
-					  </a>
+					<div id="tagsFound">
+						
 					</div>
+					
 					
 				</div>	
 			</div>

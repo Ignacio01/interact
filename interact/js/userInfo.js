@@ -1,7 +1,7 @@
 function contacts(userToken){
 	$.ajax({
 		type : "GET",
-		url : "https://api.interact.io/v2/contacts?offset=5&limit=10", 
+		url : "https://api.interact.io/v2/contacts?offset=5&limit=1000", 
 		headers : { 
 			authToken : userToken
 		}, 
@@ -16,7 +16,6 @@ function contacts(userToken){
 			infoContacts(val.id,userToken);
 		}
 	});
-
 }
 
 
@@ -54,7 +53,6 @@ function logOut(userToken){
 		error : function(data) {
 		console.log(data); }
 	}).done(function(){
-		alert("OUT");
 		window.location.href="../index.html";
 	});
 
@@ -80,3 +78,47 @@ function findTags(userToken){
 	});
 }
 
+
+function contacts2(userToken,values){
+	$.ajax({
+		type : "GET",
+		url : "https://api.interact.io/v2/contacts?offset=5&limit=1000", 
+		headers : { 
+			authToken : userToken
+		}, 
+		dataType : "json",
+		success : function(data) {
+		console.log(data); },
+		error : function(data) { console.log(data);
+		}
+	}).done(function(data){
+		var data = data.data;
+		for (val of data){
+			findPersonTags(val.id,userToken,values);
+		}
+	});
+}
+
+function findPersonTags(userId,userToken,valueTag){
+	
+	$.ajax({
+		type : "GET",
+		url : "https://api.interact.io/v2/contacts/"+userId,
+		headers : {
+			authToken : userToken
+		}, 
+		dataType : "json",
+		success : function(data) {
+			console.log(data); 
+		},
+		error : function(data) { 
+			console.log(data);
+		}
+	}).done(function(data){
+		var name=data.tags;
+		var found = name.indexOf(valueTag);
+		if(found!=-1){
+			$("#tagsFound").append("<div class=\"list-group\"><a href=\"#\" class=\"list-group-item\"><h4 class=\"list-group-item-heading\">Name: "+data.firstName+"</h4><p class=\"list-group-item-text\">tags: "+name+"</p></a></div>");
+		}
+	});
+}

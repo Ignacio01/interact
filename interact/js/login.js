@@ -41,7 +41,7 @@ function login(user, password){
 			"scope" : "device app" 
 		}),
 		success : function(result,status,xhr,data) {
-			alert(result.token.authToken+"\n"+result.user.email);
+			/*alert(result.token.authToken+"\n"+result.user.email);*/
 			paintFields("correct","");
 
 			console.log(data);
@@ -53,8 +53,7 @@ function login(user, password){
 	})
 	.done(function(result,data){
 		//redireccionar a un php
-		window.location.href="php/content.php?usuario="+result.token.authToken+"&email="+result.user.email;
-		alert("success");
+		window.location.href="php/content.php?usuario="+result.token.authToken+"&email="+result.user.email+"&id="+result.user.id;
 	});
 }
 
