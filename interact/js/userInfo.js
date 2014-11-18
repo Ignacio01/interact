@@ -116,9 +116,10 @@ function findPersonTags(userId,userToken,valueTag){
 		}
 	}).done(function(data){
 		var name=data.tags;
+		var id = $(".userfound").length;
 		var found = name.indexOf(valueTag);
 		if(found!=-1){
-			$("#tagsFound").append("<div class=\"list-group\"><a href=\"#\" class=\"list-group-item\"><span class=\"glyphicon glyphicon-plus-sign\" style='float:left;' onclick='copy(this);'></span><h4 class=\"list-group-item-heading\">Name: "+data.firstName+"</h4><p class=\"list-group-item-text\">tags: "+name+"</p></a></div>");
+			$("#tagsFound").append("<div class='userfound' id='"+id+"' draggable='true' ondragstart='drag(event)'; style='border-bottom:1px solid #eee;'><h4>Name: "+data.firstName+"</h4><p>tags: "+name+"</p></div>");
 		}
 	});
 }

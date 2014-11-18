@@ -26,6 +26,24 @@ if($_REQUEST['id']){
 		<link rel="shortcut icon" href="../img/favicon.png">
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		
+		<script>
+			function allowDrop(ev) {
+			    ev.preventDefault();
+			}
+			
+			function drag(ev) {
+			    ev.dataTransfer.setData("text", ev.target.id);
+			}
+			
+			function drop(ev) {
+			    ev.preventDefault();
+			    var data = ev.dataTransfer.getData("text");
+			    var id= document.getElementById(data);
+			    ev.target.appendChild(id);
+			}
+		</script>
+		
 	</head>
 	<body onload="contacts('<?php echo $user?>');">
 		
@@ -71,14 +89,14 @@ if($_REQUEST['id']){
 					</div>
 					
 				</div>
-				<div class="list">
+				<!--<div id="list" class="list">
 					<div class="title">
 						<div class="options" id="div" onclick="mostrarSubmenu(this);">
 							<a href="#" style="color:white;"><span  class="glyphicon glyphicon-th" ></span></a>
 						</div>
 						<div class="submenu">
 							<div class="edit" onclick="editarNombreLista(this);" style="float:left;"><a href="#" style="color:black;"><span class="glyphicon glyphicon-pencil" style="font-size:1.8em;margin-top:6px;"></a></span></div>
-							<div class="erase" style="float:right;"><a href="#" style="color:red;"><span class="glyphicon glyphicon-minus" style="font-size:1.8em;color:red;margin-top:8px;"></a></span></div>
+							<div class="erase" onclick="removeList(this)" style="float:right;"><a href="#" style="color:red;"><span class="glyphicon glyphicon-minus" style="font-size:1.8em;color:red;margin-top:8px;"></a></span></div>
 						</div>
 						<div class="editName">
 							<div class="input-group">
@@ -96,7 +114,7 @@ if($_REQUEST['id']){
 					<div class="infoList" id="list1">
 						You have 0 contacts.
 					</div>
-				</div>
+				</div>-->
 				
 			</div>
 
@@ -106,8 +124,8 @@ if($_REQUEST['id']){
 					    <div class="input-group">
 					      <input id="tagValue" type="text" class="form-control">
 					      <span class="input-group-btn">
-					      	<script type="text/javascript">function values(){var value= document.getElementById("tagValue").value; contacts2('<?php echo $user?>',value);}</script>
-					        <button class="btn btn-default" type="button" onclick="values()"><span id="down" class="glyphicon glyphicon-search"></span>&nbsp;</button>
+					      	<script type="text/javascript">function values(elemento){$(elemento).parent().parent().parent().find(".userfound").remove();var value= document.getElementById("tagValue").value; contacts2('<?php echo $user?>',value);} </script>
+					        <button class="btn btn-default" type="button" onclick="values(this)"><span id="down" class="glyphicon glyphicon-search"></span>&nbsp;</button>
 					      </span>
 					    </div>
 					
