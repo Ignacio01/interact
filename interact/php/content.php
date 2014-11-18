@@ -15,7 +15,7 @@ if($_REQUEST['id']){
 ?>
 
 <!DOCTYPE>
-<html lang ="es">
+<html lang ="en">
 	<head>
 		<meta charset="utf-8"/>
 		<title>interact.io</title>
@@ -31,7 +31,7 @@ if($_REQUEST['id']){
 		
 		<script src="../js/userInfo.js">
 		</script>
-		<script src="../js/jquery.js">
+		<script src="../js/functions.js">
 		</script>
 		<div id="container">
 			<div id="header">
@@ -51,7 +51,7 @@ if($_REQUEST['id']){
 				</div>
 			</div>
 			
-			<div class="addList">+</div>
+			<div class="addList" onclick="crearLista();">+</div>
 			<div id="containerInfo">
 				
 				<div class="list">
@@ -67,30 +67,34 @@ if($_REQUEST['id']){
 						All Contacts
 						<div class="iconarrow"><span id="down" class="glyphicon glyphicon-chevron-down"></span></div>
 					</div>
-					<div class="infoList">
+					<div class="infoList" id="default">
 					</div>
 					
 				</div>
-				
-				
 				<div class="list">
 					<div class="title">
-						<div class="options">
-							<a href="#" style="color:white;"><span class="glyphicon glyphicon-th"></span></a>
+						<div class="options" id="div" onclick="mostrarSubmenu(this);">
+							<a href="#" style="color:white;"><span  class="glyphicon glyphicon-th" ></span></a>
 						</div>
 						<div class="submenu">
-							<div class="edit" style="float:left;"><a href="#" style="color:black;"><span class="glyphicon glyphicon-pencil" style="font-size:1.8em;margin-top:6px;"></a></span></div>
+							<div class="edit" onclick="editarNombreLista(this);" style="float:left;"><a href="#" style="color:black;"><span class="glyphicon glyphicon-pencil" style="font-size:1.8em;margin-top:6px;"></a></span></div>
 							<div class="erase" style="float:right;"><a href="#" style="color:red;"><span class="glyphicon glyphicon-minus" style="font-size:1.8em;color:red;margin-top:8px;"></a></span></div>
 						</div>
-						New List
+						<div class="editName">
+							<div class="input-group">
+						      <input type="text" class="form-control">
+						      <span class="input-group-btn">
+						        <button class="btn btn-default changeName" type="button" onclick="cambiarNombreLista(this);">Change Name</button>
+						      </span>
+						    </div>
+						</div>
+						<span class="newList">New List</span>
 						<div class="iconarrow">
 							<span id="down" class="glyphicon glyphicon-chevron-down"></span>
 						</div>
 					</div>
-					<div class="infoList">
-						<div class=<"contact">
-							You have 0 contacts.
-						</div>
+					<div class="infoList" id="list1">
+						You have 0 contacts.
 					</div>
 				</div>
 				

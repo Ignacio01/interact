@@ -34,9 +34,9 @@ function infoContacts(id,userToken){
 			console.log(data);
 		}
 	}).done(function(data){
-		var name=data.firstName
+		var name=data.firstName;
 		if(name!=undefined){
-			$('.infoList').append("<div class=\"contact\">"+name+"<div class=\"call\"><span class=\"glyphicon glyphicon-phone-alt\"></span></div></div>");
+			$('#default').append("<div class=\"contact\">"+name+"<div class=\"call\"><span class=\"glyphicon glyphicon-phone-alt\"></span></div></div>");
 		}
 	});
 }
@@ -118,7 +118,7 @@ function findPersonTags(userId,userToken,valueTag){
 		var name=data.tags;
 		var found = name.indexOf(valueTag);
 		if(found!=-1){
-			$("#tagsFound").append("<div class=\"list-group\"><a href=\"#\" class=\"list-group-item\"><h4 class=\"list-group-item-heading\">Name: "+data.firstName+"</h4><p class=\"list-group-item-text\">tags: "+name+"</p></a></div>");
+			$("#tagsFound").append("<div class=\"list-group\"><a href=\"#\" class=\"list-group-item\"><span class=\"glyphicon glyphicon-plus-sign\" style='float:left;' onclick='copy(this);'></span><h4 class=\"list-group-item-heading\">Name: "+data.firstName+"</h4><p class=\"list-group-item-text\">tags: "+name+"</p></a></div>");
 		}
 	});
 }
