@@ -1,0 +1,337 @@
+@import url(http://fonts.googleapis.com/css?family=Concert+One);
+@import url(http://fonts.googleapis.com/css?family=Poiret+One);
+body{
+	font-family: 'Poiret One', Arial;
+	background-color:#F7FFFF;
+	/*background-color: #EEFFF0;*/
+}
+
+h3{
+	color:#FF7C3F;
+	font-size: 2em;
+	border-bottom: 1px solid #FE8852;
+}
+.container{
+	margin:0 auto;
+	width: 725px;
+}
+.left-container{
+	padding:0 10px 0 10px;
+	background-color:white;
+	color:#006374;
+	width:496px;
+	top:484px;
+	left: 0px;
+	position:relative;
+	font-family: 'Poiret One', Arial;
+	font-size: 1.3em;
+	border-left:5px solid #38B2C7;
+	border-right:5px solid #38B2C7;
+	border-bottom:5px solid #38B2C7;
+}
+.left-container ul{
+	padding: 0 0 0 20px;
+	margin-top:-40px;
+}
+.left-container ol{
+	padding: 0 0 0 40px;
+	margin-top:-40px;
+}
+.right-container{
+	position: relative;
+	text-align: right;
+	color:#007171;
+	font-size: 1em;
+	float: right;
+	margin-right: 50px;
+}
+
+#timer{
+	font-size: 1em;
+}
+
+.title{
+	color:#FF7C3F;
+	font-size:1.5em;
+}
+
+#game{
+	font-family: 'Concert One', Arial;
+	margin:0 auto;
+	width:526px;
+	height:526px;
+	background-color:#38B2C7;
+	/*background-color:#5AB07F;*/
+	color:#FF7C3F;
+	position: absolute;
+}
+#game-top{
+	opacity: 0.6;
+	margin:0 auto;
+	width:526px;
+	height:526px;
+	background-color:#E35E20;
+	color:#E35E20;
+	float: left;
+	display:none;
+}
+#game-end{
+	text-align: center;
+	margin-top:113px;
+	margin-left:113px;
+	height:300px;
+	width: 300px;
+	background-color:white;
+	position:absolute;
+	color:#FF7C3F;
+	float: left;
+	display:none;
+}
+#score{
+	font-size: 1.5em;
+}
+#time{
+	font-size: 1.5em;
+}
+#playAgain{
+	position:relative;
+	background-color:#FF7C3F;
+	border-radius:3px;
+	color:white;
+	top:90px;
+	height:40px;
+	width:80px;
+	margin:0 auto;
+	text-align:center;
+	font-size:2em;
+	box-shadow: 1px 1px 1px #999;
+}
+#playAgain:active{
+	box-shadow: 0px 0px 0px #999;
+}
+.twi{
+	position: absolute;
+	bottom:15px;
+	left:45px;
+}
+.goo{
+	position: absolute;
+	bottom:15px;
+	right:25px;
+}
+
+.fcb{
+	position: absolute;
+	bottom:35px;
+	left:60px;
+}
+
+#game .game-col{
+	background-color: white;
+	float: left;
+	width:46px;
+	height:46px;
+	margin-top: 6px;
+	margin-left:6px;
+	border-radius:2px;
+	font-size: 2.3em;
+	text-align: center;
+	z-index: 10;
+}
+
+#game .game-col:hover{
+	background-color: #FFB18D;
+	opacity: 1;
+	border-radius:5px;
+}
+a{
+	text-decoration: none;
+}
+.newGame{
+	position:relative;
+	background-color: #FF7C3F;
+	color:white;
+	text-align: center;
+	width: 140px;
+	margin:0 auto;
+	float: left;
+	margin-left:387px; 
+	top:-58px;
+	right:5px;
+	height:50px;
+	border-radius: 5px;
+	box-shadow: 1px 1px 1px #999;
+}
+
+.newGame:active{
+	box-shadow: 0px 0px 0px #999;
+}
+
+#playerInfo{
+	position:relative;
+	margin-right: 50px;
+	float:left;
+	height:140px;
+	width:525px;
+	background-color: white;
+}
+
+#bestScores{
+	width: 100%;
+	text-align: center;
+	height: 100%;
+}
+#bestScores td{
+	width: 33%;
+	font-weight:bold;
+}
+#bestScores tr:first-child td{
+	background-color: white;
+}
+
+
+.nombre{
+	position: relative;
+	z-index: 2;
+	margin:0px;
+	height:100%;
+	width:33%;
+	vertical-align: top;
+}
+.tiempo{
+	position: relative;
+	z-index: 2;
+	margin:0px;
+	height:100%;
+	width:33%;
+	vertical-align: top;
+}
+.puntuacion{
+	position:relative;
+	z-index: 2;
+	margin:0px;
+	height:100%;
+	width:33%;
+	vertical-align: top;
+}
+#sticker{
+	margin-left: 10%;
+	height:auto;
+}
+
+
+@media screen and (max-width:420px){
+	.container{
+		margin:0 auto;
+		width:99%;
+	}
+	#game{
+		font-family: 'Concert One',Arial;
+		margin:0 auto;
+		width:304px;
+		height:304px;
+		background-color:#38B2C7;
+		color:#FF7C3F;
+		position: absolute;
+	}
+	#game .game-col{
+		background-color: white;
+		float: left;
+		width:26px;
+		height:26px;
+		margin-top: 4px;
+		margin-left:4px;
+		border-radius:2px;
+		font-size: 1.3em;
+		text-align: center;
+		z-index: 10;
+	}
+	.left-container{
+		padding:0 10px 0 10px;
+		background-color:white;
+		width:274px;
+		top:380px;
+		left: 0px;
+		position:relative;
+		font-family: 'Poiret One', Arial;
+		border-left:5px solid #38B2C7;
+		border-right:5px solid #38B2C7;
+		border-bottom:5px solid #38B2C7;
+		border-top:5px solid #38B2C7;
+	}
+	
+	#game-top{
+		opacity: 0.6;
+		margin:0 auto;
+		width:304px;
+		height:304px;
+		background-color:#E35E20;
+		color:#E35E20;
+		float: left;
+		display:none;
+	}
+	#game-end{
+		text-align: center;
+		margin-top:13px;
+		margin-left:13px;
+		height:280px;
+		width: 280px;
+		background-color:white;
+		position:absolute;
+		color:#FF7C3F;
+		float: left;
+		display:none;
+	}
+	.title{
+		font-size:1em;
+	}
+
+	.newGame{
+		position:relative;
+		background-color: #FF7C3F;
+		color:white;
+		text-align: center;
+		width: 70px;
+		top:-38px;
+		margin-left:235px;
+		height:30px;
+		border-radius: 5px;
+		box-shadow: 2px 2px 1px #999;
+		font-size: 0.9em;
+	}
+	.right-container{
+		position: absolute;
+		font-size: 1em;
+		left:20px;
+		top:340px;
+	}
+	#playAgain{
+		position:relative;
+		background-color:#E35E20;
+		border-radius:3px;
+		color:white;
+		top:103px;
+		height:30px;
+		width:75px;
+		margin:0 auto;
+		text-align:center;
+		font-size:2em;
+		box-shadow: 1px 1px 1px #999;
+		font-size: 1.2em;
+	}
+	#playAgain:active{
+		box-shadow: 0px 0px 0px #999;
+	}
+	#playAgainPosition{
+		position: relative;
+		top: 4px;
+	}
+	#sticker>img{
+		width:270px;
+		height:200px;
+	}
+	#sticker{
+		margin:0px;
+	}
+}
+
